@@ -2,66 +2,67 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionTitle from '../components/SectionTitle.astro';
 ---
-<BaseLayout>
+<BaseLayout title="M. Berkan Taştan — R&D Engineer">
   <section class="shell grid min-h-[76vh] items-center gap-12 py-20 lg:grid-cols-[1.15fr_.85fr]">
     <div>
-      <p class="kicker mb-5">R&D Engineer · Researcher · Developer</p>
+      <p class="kicker mb-5">M. Berkan Taştan · R&D Engineer</p>
       <h1 class="max-w-4xl text-5xl font-black leading-[.98] tracking-[-.045em] text-white sm:text-6xl lg:text-7xl">
-        Engineering ideas into
-        <span class="text-cyan-300"> working systems.</span>
+        Marine engineering meets
+        <span class="text-cyan-300"> software & simulation.</span>
       </h1>
       <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-400">
-        I work across simulation, marine engineering, digital twins, open-source software and hardware-software integration. This site is my technical portfolio, research archive and engineering notebook.
+        I develop and investigate engineering systems across marine simulation, digital twins, energy efficiency, open-source software and hardware-software integration. This site is my technical portfolio, research archive and engineering notebook.
       </p>
       <div class="mt-9 flex flex-wrap gap-3">
         <a href="/projects" class="rounded-full bg-cyan-300 px-5 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-200">Explore projects</a>
         <a href="/research" class="rounded-full border border-white/10 px-5 py-3 text-sm font-bold text-white transition hover:border-cyan-300/40">Read research</a>
+        <a href="https://github.com/mberkantastan" target="_blank" rel="noreferrer" class="rounded-full border border-white/10 px-5 py-3 text-sm font-bold text-white transition hover:border-cyan-300/40">GitHub ↗</a>
       </div>
     </div>
 
     <div class="glass relative overflow-hidden rounded-3xl p-6 shadow-2xl shadow-cyan-950/30">
       <div class="mb-6 flex items-center justify-between border-b border-white/5 pb-4">
-        <span class="mono text-xs text-cyan-300">SYSTEM_PROFILE</span>
+        <span class="mono text-xs text-cyan-300">ENGINEERING_PROFILE</span>
         <span class="h-2 w-2 rounded-full bg-emerald-300 shadow-[0_0_14px_rgba(127,255,201,.8)]"></span>
       </div>
       <div class="space-y-5">
-        <div><p class="mono text-xs text-slate-500">FOCUS_01</p><p class="mt-1 font-semibold">Marine Systems & Simulation</p></div>
-        <div><p class="mono text-xs text-slate-500">FOCUS_02</p><p class="mt-1 font-semibold">Digital Twin Development</p></div>
-        <div><p class="mono text-xs text-slate-500">FOCUS_03</p><p class="mt-1 font-semibold">Hardware / Software Integration</p></div>
-        <div><p class="mono text-xs text-slate-500">FOCUS_04</p><p class="mt-1 font-semibold">Open Research & Technical Writing</p></div>
+        <div><p class="mono text-xs text-slate-500">FOCUS_01</p><p class="mt-1 font-semibold">Marine Systems & Engine Room Simulation</p></div>
+        <div><p class="mono text-xs text-slate-500">FOCUS_02</p><p class="mt-1 font-semibold">Digital Twin & Mathematical Modelling</p></div>
+        <div><p class="mono text-xs text-slate-500">FOCUS_03</p><p class="mt-1 font-semibold">Energy Efficiency & Decarbonization</p></div>
+        <div><p class="mono text-xs text-slate-500">FOCUS_04</p><p class="mt-1 font-semibold">Hardware / Software Integration</p></div>
       </div>
       <div class="mt-7 rounded-2xl border border-cyan-300/10 bg-cyan-300/[.035] p-4 font-mono text-xs leading-6 text-slate-400">
-        <span class="text-cyan-300">$</span> build --from-research --to-reality<br/>
-        <span class="text-emerald-300">✓</span> portfolio initialized
+        <span class="text-cyan-300">$</span> research → model → simulate → validate<br/>
+        <span class="text-emerald-300">✓</span> document and share what works
       </div>
     </div>
   </section>
 
   <section class="shell py-20">
-    <SectionTitle kicker="01 / Work" title="A portfolio built around engineering depth." text="Projects are documented with architecture, implementation notes, code, experiments and lessons learned — not just screenshots." />
+    <SectionTitle kicker="01 / Work" title="Engineering work with technical depth." text="Projects are documented through architecture, system logic, implementation notes, experiments and lessons learned — not only screenshots." />
     <div class="grid gap-5 md:grid-cols-3">
-      <a href="/projects" class="card p-6"><p class="kicker">Projects</p><h3 class="mt-4 text-xl font-bold">Software & Simulation</h3><p class="mt-3 text-sm leading-6 text-slate-400">Digital twins, simulation tooling, engineering software and experimental prototypes.</p></a>
-      <a href="/research" class="card p-6"><p class="kicker">Research</p><h3 class="mt-4 text-xl font-bold">Technical Investigations</h3><p class="mt-3 text-sm leading-6 text-slate-400">Structured engineering research, system studies, models, references and technical analysis.</p></a>
-      <a href="/open-source" class="card p-6"><p class="kicker">Open Source</p><h3 class="mt-4 text-xl font-bold">Reusable Engineering Tools</h3><p class="mt-3 text-sm leading-6 text-slate-400">Code, utilities and experiments published for others to inspect, reuse and improve.</p></a>
+      <a href="/projects" class="card p-6"><p class="kicker">Projects</p><h3 class="mt-4 text-xl font-bold">Simulation & Engineering Software</h3><p class="mt-3 text-sm leading-6 text-slate-400">Engine-room simulation, digital-twin concepts, engineering tooling and software prototypes.</p></a>
+      <a href="/research" class="card p-6"><p class="kicker">Research</p><h3 class="mt-4 text-xl font-bold">Marine Systems Research</h3><p class="mt-3 text-sm leading-6 text-slate-400">Dual-fuel systems, energy efficiency, system modelling, technical references and applied engineering studies.</p></a>
+      <a href="/open-source" class="card p-6"><p class="kicker">Open Source</p><h3 class="mt-4 text-xl font-bold">Code & Reusable Tools</h3><p class="mt-3 text-sm leading-6 text-slate-400">Utilities, experiments and engineering code published for inspection, reuse and improvement.</p></a>
     </div>
   </section>
 
   <section class="shell py-20">
-    <SectionTitle kicker="02 / Fields" title="Where software meets physical systems." />
+    <SectionTitle kicker="02 / Fields" title="Where software meets physical engineering systems." />
     <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-      {['Marine Engineering','Unity & 3D','Python / Automation','LabVIEW','Digital Twins','Control Systems','Sensors & DAQ','Technical Documentation'].map((item) => <div class="card p-5 text-sm font-semibold text-slate-200">{item}</div>)}
+      {['Marine Engineering','Unity & 3D','Python / Automation','LabVIEW','Digital Twins','Control Systems','Energy Efficiency','Technical Documentation'].map((item) => <div class="card p-5 text-sm font-semibold text-slate-200">{item}</div>)}
     </div>
   </section>
 
   <section class="shell py-20">
     <div class="glass rounded-3xl p-8 sm:p-10">
-      <p class="kicker">Open engineering</p>
+      <p class="kicker">Engineering notebook</p>
       <div class="mt-4 grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
         <div>
           <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Build. Test. Document. Share.</h2>
-          <p class="mt-4 max-w-2xl leading-7 text-slate-400">This platform will grow with research notes, academic work, hardware experiments and open-source engineering projects.</p>
+          <p class="mt-4 max-w-2xl leading-7 text-slate-400">This platform will grow with engineering research, academic work, hardware experiments, technical notes and open-source projects.</p>
         </div>
-        <a href="https://github.com/mberkantastan" target="_blank" rel="noreferrer" class="rounded-full border border-cyan-300/25 px-5 py-3 text-sm font-bold text-cyan-200 hover:bg-cyan-300/5">View GitHub ↗</a>
+        <a href="/about" class="rounded-full border border-cyan-300/25 px-5 py-3 text-sm font-bold text-cyan-200 hover:bg-cyan-300/5">About me →</a>
       </div>
     </div>
   </section>
