@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const entries = (await getCollection('research')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+<BaseLayout title="Research — M. Berkan Taştan">
+  <section class="shell min-h-[65vh] py-20">
+    <p class="kicker mb-4">Technical archive</p>
+    <h1 class="max-w-4xl text-4xl font-black tracking-tight text-white sm:text-6xl">Research</h1>
+    <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-400">Structured investigations, engineering notes, references, models and system-level studies.</p>
+    <div class="mt-10 space-y-4">
+      {entries.map((entry) => (
+        <a href={`/research/${entry.id}`} class="card grid gap-4 p-6 md:grid-cols-[130px_1fr_auto] md:items-center">
+          <div class="mono text-xs text-slate-500">{entry.data.date.toISOString().slice(0,10)}</div>
+          <div><h2 class="text-xl font-bold text-white">{entry.data.title}</h2><p class="mt-2 text-sm leading-6 text-slate-400">{entry.data.description}</p></div>
+          <span class="text-cyan-300">→</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
