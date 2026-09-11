@@ -2,10 +2,59 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="About — M. Berkan Taştan">
-  <section class="shell min-h-[65vh] py-20">
+  <section class="shell py-20">
     <p class="kicker mb-4">Profile</p>
     <h1 class="max-w-4xl text-4xl font-black tracking-tight text-white sm:text-6xl">About</h1>
-    <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-400">R&D engineer working at the intersection of marine systems, simulation, software development and physical-system integration.</p>
-    <div class="mt-10 card p-6 text-slate-400">This section is ready for content. We will connect Markdown/MDX entries and project metadata in the next iteration.</div>
+    <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-400">
+      I am an R&D engineer with a background in marine engineering, working across simulation software, digital twins, mathematical modelling, energy efficiency and technical system design.
+    </p>
+
+    <div class="mt-12 grid gap-6 lg:grid-cols-[1.15fr_.85fr]">
+      <div class="card p-7">
+        <p class="kicker">Engineering approach</p>
+        <h2 class="mt-4 text-2xl font-bold text-white">From physical system to executable model.</h2>
+        <div class="mt-5 space-y-4 leading-7 text-slate-400">
+          <p>I am especially interested in turning complex machinery and ship systems into understandable, testable and interactive software models.</p>
+          <p>My work combines engineering research, system architecture, simulation logic, interface design, validation and technical documentation. I use this site to document that process and publish selected work in an open and reproducible format.</p>
+          <p>My longer-term focus is the integration of software with real hardware: sensors, data acquisition, control systems and physical equipment connected to simulation and digital-twin environments.</p>
+        </div>
+      </div>
+
+      <div class="glass rounded-3xl p-7">
+        <p class="kicker">Core areas</p>
+        <div class="mt-5 flex flex-wrap gap-2">
+          {[
+            'Marine Engineering',
+            'Engine Room Simulation',
+            'Digital Twins',
+            'Unity / C#',
+            'Python',
+            'LabVIEW',
+            'Energy Efficiency',
+            'Control Systems',
+            'Hardware Integration',
+            'Technical Documentation'
+          ].map((item) => <span class="tag">{item}</span>)}
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 grid gap-5 md:grid-cols-3">
+      <div class="card p-6">
+        <p class="mono text-xs text-cyan-300">01 / RESEARCH</p>
+        <h3 class="mt-3 text-lg font-bold">Understand the system</h3>
+        <p class="mt-3 text-sm leading-6 text-slate-400">Study manuals, standards, operating logic, physical constraints and real engineering data.</p>
+      </div>
+      <div class="card p-6">
+        <p class="mono text-xs text-cyan-300">02 / BUILD</p>
+        <h3 class="mt-3 text-lg font-bold">Create the model</h3>
+        <p class="mt-3 text-sm leading-6 text-slate-400">Translate system behaviour into software architecture, mathematics, simulation logic and interfaces.</p>
+      </div>
+      <div class="card p-6">
+        <p class="mono text-xs text-cyan-300">03 / VALIDATE</p>
+        <h3 class="mt-3 text-lg font-bold">Test against reality</h3>
+        <p class="mt-3 text-sm leading-6 text-slate-400">Validate behaviour, document assumptions and improve the model through structured testing.</p>
+      </div>
+    </div>
   </section>
 </BaseLayout>
