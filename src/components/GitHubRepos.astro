@@ -8,13 +8,7 @@ const fallback = [
     language: 'HTML / JavaScript',
     url: 'https://github.com/mberkantastan/DualFuel-Main-Engine'
   },
-  {
-    name: 'mberkantastan.github.io',
-    description: lang === 'tr' ? 'Bu mühendislik portföyü, araştırma arşivi ve teknik blogun kaynak kodu.' : 'Source code for this engineering portfolio, research archive and technical blog.',
-    language: 'Astro / TypeScript',
-    url: 'https://github.com/mberkantastan/mberkantastan.github.io'
-  }
-];
+  ];
 ---
 <div id="github-repos" class="grid gap-5 md:grid-cols-2">
   {fallback.map(repo => (
@@ -32,7 +26,9 @@ const fallback = [
   fetch('https://api.github.com/users/mberkantastan/repos?sort=updated&per_page=8&type=owner')
     .then(r => r.ok ? r.json() : Promise.reject())
     .then(repos => {
-      const visible = repos.filter(r => !r.fork).slice(0, 6);
+      const visible = repos
+      .filter(r => !r.fork && r.name !== 'mberkantastan.github.io')
+      .slice(0, 6);
       if (!root || !visible.length) return;
       root.innerHTML = visible.map(repo => `
         <a class="card block p-6" href="${esc(repo.html_url)}" target="_blank" rel="noreferrer">
