@@ -7,18 +7,35 @@ interface Props {
   title?: string;
   description?: string;
 }
+const isTr = Astro.url.pathname === '/tr' || Astro.url.pathname.startsWith('/tr/');
+const lang = isTr ? 'tr' : 'en';
 const {
   title = 'M. Berkan Taştan — Engineering & Research',
-  description = 'Portfolio, research, open-source software and engineering notes focused on simulation, marine systems, digital twins and hardware-software integration.'
+  description = isTr
+    ? 'Simülasyon, deniz sistemleri, sayısal ikizler, sistem entegrasyonu ve açık kaynak mühendislik çalışmaları.'
+    : 'Portfolio, research, open-source software and engineering notes focused on simulation, marine systems, digital twins and systems integration.'
 } = Astro.props;
+const base = Astro.site ?? new URL('https://mberkantastan.github.io');
+const currentPath = Astro.url.pathname;
+const enPath = isTr ? (currentPath.replace(/^\/tr(?=\/|$)/, '') || '/') : currentPath;
+const trPath = isTr ? currentPath : `/tr${currentPath === '/' ? '' : currentPath}`;
+const canonical = new URL(currentPath, base);
 ---
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#06101b" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={new URL(enPath, base)} />
+    <link rel="alternate" hreflang="tr" href={new URL(trPath, base)} />
     <title>{title}</title>
   </head>
   <body>

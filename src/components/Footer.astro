@@ -1,6 +1,9 @@
+---
+const isTr = Astro.url.pathname === '/tr' || Astro.url.pathname.startsWith('/tr/');
+---
 <footer class="mt-24 border-t border-white/5 py-10 text-sm text-slate-500">
   <div class="shell flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
     <p>© {new Date().getFullYear()} M. Berkan Taştan</p>
-    <p class="mono">Research · Engineering · Open Source</p>
+    <p class="mono">{isTr ? 'Araştırma · Mühendislik · Açık Kaynak' : 'Research · Engineering · Open Source'}</p>
   </div>
 </footer>

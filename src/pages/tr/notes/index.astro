@@ -1,0 +1,5 @@
+---
+import { getCollection } from 'astro:content'; import BaseLayout from '../../../layouts/BaseLayout.astro';
+const notes=(await getCollection('notesTr')).filter(n=>!n.data.draft).sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
+---
+<BaseLayout title="Teknik Blog — M. Berkan Taştan"><section class="shell py-20"><p class="kicker mb-4">Mühendislik notları</p><h1 class="text-4xl font-black sm:text-6xl">Teknik Blog</h1><p class="mt-6 max-w-2xl text-lg leading-8 text-slate-400">Modelleme, simülasyon, doğrulama, gemi sistemleri ve yazılım-donanım entegrasyonu üzerine uygulamalı teknik notlar.</p><div class="mt-10 grid gap-5 md:grid-cols-2">{notes.map(n=><a href={`/tr/notes/${n.id}`} class="card"><img class="project-image" src={n.data.image} alt=""/><div class="p-6"><p class="mono text-xs text-slate-500">{n.data.date.toISOString().slice(0,10)}</p><h2 class="mt-3 text-2xl font-bold">{n.data.title}</h2><p class="mt-3 leading-7 text-slate-400">{n.data.description}</p></div></a>)}</div></section></BaseLayout>

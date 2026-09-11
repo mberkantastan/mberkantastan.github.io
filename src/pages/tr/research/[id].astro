@@ -1,0 +1,6 @@
+---
+import { getCollection, render } from 'astro:content'; import BaseLayout from '../../../layouts/BaseLayout.astro';
+export async function getStaticPaths(){const entries=await getCollection('researchTr');return entries.map(entry=>({params:{id:entry.id},props:{entry}}));}
+const {entry}=Astro.props; const {Content}=await render(entry);
+---
+<BaseLayout title={`${entry.data.title} — Araştırma`} description={entry.data.description}><article class="shell py-20"><a href="/tr/research" class="mono text-xs text-cyan-300">← ARAŞTIRMA</a><header class="mt-7 max-w-4xl"><p class="kicker">{entry.data.status??'Araştırma'} · {entry.data.date.toISOString().slice(0,10)}</p><h1 class="mt-4 text-4xl font-black sm:text-6xl">{entry.data.title}</h1><p class="mt-6 text-lg leading-8 text-slate-400">{entry.data.description}</p></header>{entry.data.image&&<img class="mt-10 w-full max-w-5xl rounded-3xl border border-white/10" src={entry.data.image} alt=""/>}<div class="prose-engineering mt-12 max-w-3xl"><Content/></div></article></BaseLayout>

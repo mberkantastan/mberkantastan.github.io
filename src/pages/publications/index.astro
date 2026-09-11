@@ -1,11 +1,5 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content'; import BaseLayout from '../../layouts/BaseLayout.astro';
+const pubs=(await getCollection('publications')).filter(p=>!p.data.draft).sort((a,b)=>b.data.year-a.data.year);
 ---
-<BaseLayout title="Publications — M. Berkan Taştan">
-  <section class="shell min-h-[65vh] py-20">
-    <p class="kicker mb-4">Academic work</p>
-    <h1 class="max-w-4xl text-4xl font-black tracking-tight text-white sm:text-6xl">Publications</h1>
-    <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-400">Papers, conference contributions, technical reports and academic outputs will be indexed here as they are published.</p>
-    <div class="mt-10 card p-6 text-slate-400">This section is ready for content. We will connect Markdown/MDX entries and project metadata in the next iteration.</div>
-  </section>
-</BaseLayout>
+<BaseLayout title="Publications — M. Berkan Taştan"><section class="shell py-20"><p class="kicker mb-4">Academic archive</p><h1 class="text-4xl font-black sm:text-6xl">Publications</h1><p class="mt-6 max-w-2xl text-lg leading-8 text-slate-400">A structured archive for future papers, conference contributions, technical reports, code and datasets.</p>{pubs.length?<div class="mt-10 space-y-5">{pubs.map(p=><article class="card p-6"><p class="mono text-xs text-slate-500">{p.data.year} · {p.data.type}</p><h2 class="mt-3 text-2xl font-bold">{p.data.title}</h2><p class="mt-2 text-slate-400">{p.data.authors.join(', ')}</p><p class="mt-1 text-sm text-slate-500">{p.data.venue}</p><div class="mt-5 flex flex-wrap gap-2">{p.data.doi&&<a class="tag" href={p.data.doi}>DOI ↗</a>}{p.data.pdf&&<a class="tag" href={p.data.pdf}>PDF</a>}{p.data.code&&<a class="tag" href={p.data.code}>Code ↗</a>}{p.data.dataset&&<a class="tag" href={p.data.dataset}>Dataset ↗</a>}</div></article>)}</div>:<div class="glass mt-10 rounded-3xl p-8"><p class="kicker">Archive initialized</p><h2 class="mt-3 text-2xl font-bold">Formal publications will appear here.</h2><p class="mt-3 max-w-2xl leading-7 text-slate-400">The data model already supports authors, venue, year, DOI, PDF, code and dataset links. Draft entries remain hidden until they are ready to publish.</p></div>}</section></BaseLayout>
