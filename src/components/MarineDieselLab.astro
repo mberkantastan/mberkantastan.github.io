@@ -1,0 +1,26 @@
+---
+interface Props { lang: 'tr' | 'en'; }
+const { lang } = Astro.props;
+const isTr = lang === 'tr';
+const demoUrl = 'https://mberkantastan.github.io/Marine-Diesel-Lab/';
+const title = isTr
+  ? 'Gemi Dizel Makineleri · İnteraktif Çalışma'
+  : 'Marine Diesel Engines · Interactive Workshop';
+---
+<section class="shell py-12 sm:py-16">
+  <p class="kicker mb-4">MARINE DIESEL LAB</p>
+  <h1 class="max-w-5xl text-3xl font-black tracking-tight text-white sm:text-5xl">{title}</h1>
+  <p class="mt-6 max-w-3xl text-base leading-8 text-slate-400">{isTr
+    ? 'İki ve dört zamanlı gemi dizel makinelerini keşfet. Motor tipini seç, krank açısını değiştir; piston, valfler ve çevrim zamanlamasını birlikte incele.'
+    : 'Explore two-stroke and four-stroke marine diesel engines. Select an engine type, change the crank angle and examine piston motion, valves and cycle timing in the Turkish-language application.'}</p>
+  <div class="mt-7 flex flex-wrap gap-3">
+    <a href={demoUrl} target="_blank" rel="noreferrer" class="rounded-full bg-cyan-300 px-5 py-3 text-sm font-bold text-slate-950 hover:bg-cyan-200">{isTr ? 'Uygulamayı ayrı sekmede aç' : 'Open application in a new tab'}</a>
+    <a href="https://github.com/mberkantastan/Marine-Diesel-Lab" target="_blank" rel="noreferrer" class="rounded-full border border-cyan-300/25 px-5 py-3 text-sm font-bold text-cyan-200">{isTr ? 'GitHub kaynak kodları' : 'Source code on GitHub'}</a>
+  </div>
+  <div class="mt-10 overflow-hidden rounded-2xl border border-white/10 bg-[#0b111a]">
+    <iframe src={demoUrl} title={title} allow="fullscreen" allowfullscreen class="block h-[1250px] w-full border-0"></iframe>
+  </div>
+  <p class="mt-5 max-w-3xl text-sm leading-7 text-slate-400">{isTr
+    ? 'Şematik eğitim modeli. Zamanlama açıları üreticiden bağımsız örnek değerlerdir; belirli bir makinenin teknik ayar verisi değildir. Model bilgisi panelinden çevrimdışı HTML dosyasını indirebilirsin.'
+    : 'Schematic educational model. Timing angles are manufacturer-independent examples, rather than adjustment data for a particular engine. Use the model information panel to download an offline HTML copy.'}</p>
+</section>

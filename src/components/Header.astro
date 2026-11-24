@@ -4,16 +4,16 @@ const isTr = path === '/tr' || path.startsWith('/tr/');
 const prefix = isTr ? '/tr' : '';
 const nav = isTr ? [
   ['Projeler', `${prefix}/projects`],
+  ['MARINE DIESEL LAB', `${prefix}/marine-diesel-lab`],
   ['Araştırma', `${prefix}/research`],
-  ['Açık Kaynak', `${prefix}/open-source`],
   ['Yayınlar', `${prefix}/publications`],
   ['Teknik Blog', `${prefix}/notes`],
   ['CV', `${prefix}/cv`],
   ['Hakkımda', `${prefix}/about`],
 ] : [
   ['Projects', '/projects'],
+  ['MARINE DIESEL LAB', '/marine-diesel-lab'],
   ['Research', '/research'],
-  ['Open Source', '/open-source'],
   ['Publications', '/publications'],
   ['Technical Blog', '/notes'],
   ['CV', '/cv'],
