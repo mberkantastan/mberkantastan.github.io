@@ -2,7 +2,7 @@
 interface Props { lang: 'tr' | 'en'; }
 const { lang } = Astro.props;
 const isTr = lang === 'tr';
-const demoUrl = 'https://mberkantastan.github.io/Marine-Diesel-Lab/';
+const demoUrl = 'https://marinediesellab.com/labs/dizel-motor/';
 const title = isTr
   ? 'Gemi Dizel Makineleri · İnteraktif Çalışma'
   : 'Marine Diesel Engines · Interactive Workshop';
@@ -15,10 +15,12 @@ const title = isTr
     : 'Explore two-stroke and four-stroke marine diesel engines. Select an engine type, change the crank angle and examine piston motion, valves and cycle timing in the Turkish-language application.'}</p>
   <div class="mt-7 flex flex-wrap gap-3">
     <a href={demoUrl} target="_blank" rel="noreferrer" class="rounded-full bg-cyan-300 px-5 py-3 text-sm font-bold text-slate-950 hover:bg-cyan-200">{isTr ? 'Uygulamayı ayrı sekmede aç' : 'Open application in a new tab'}</a>
-    <a href="https://github.com/mberkantastan/Marine-Diesel-Lab" target="_blank" rel="noreferrer" class="rounded-full border border-cyan-300/25 px-5 py-3 text-sm font-bold text-cyan-200">{isTr ? 'GitHub kaynak kodları' : 'Source code on GitHub'}</a>
+    <a href="https://marinediesellab.com/" target="_blank" rel="noreferrer" class="rounded-full border border-cyan-300/25 px-5 py-3 text-sm font-bold text-cyan-200">{isTr ? 'Marine Diesel Lab ana sayfa' : 'Marine Diesel Lab home'}</a>
   </div>
-  <div class="mt-10 overflow-hidden rounded-2xl border border-white/10 bg-[#0b111a]">
-    <iframe src={demoUrl} title={title} allow="fullscreen" allowfullscreen class="block h-[1250px] w-full border-0"></iframe>
+  <div class="mt-10 max-w-3xl rounded-2xl border border-cyan-300/20 bg-cyan-300/5 p-6 sm:p-8">
+    <p class="kicker mb-3">{isTr ? 'YENİ ADRES' : 'NEW WEBSITE'}</p>
+    <a href="https://marinediesellab.com/" target="_blank" rel="noreferrer" class="break-words text-2xl font-bold text-cyan-200 sm:text-3xl">marinediesellab.com</a>
+    <p class="mt-4 text-base leading-8 text-slate-400">{isTr ? 'Marine Diesel Lab artık kendi adresinde. Güncel atölyeyi açıp silindir çapı, strok ve biyel boyunu kendi senaryona göre değiştirebilirsin.' : 'Marine Diesel Lab now has its own website. Open the latest workshop and adjust bore, stroke and connecting rod length for your own scenario.'}</p>
   </div>
   <p class="mt-5 max-w-3xl text-sm leading-7 text-slate-400">{isTr
     ? 'Şematik eğitim modeli. Zamanlama açıları üreticiden bağımsız örnek değerlerdir; belirli bir makinenin teknik ayar verisi değildir. Model bilgisi panelinden çevrimdışı HTML dosyasını indirebilirsin.'
